@@ -58,7 +58,7 @@ __이와 같이 객체를 테이블에 맞추어 데이터 중심으로 모델�
 
 :mag: 테이블은 왜래 키로 연관관계를 맺습니다. → 양방향
 
-! 그렇다면 이제, 이를 배경으로 연관 관계를 매핑해 보겠습니다. 
+:exclamation: 그렇다면 이제, 이를 배경으로 연관 관계를 매핑해 보겠습니다. 
 1. 두 객체의 방향을 고려합니다. 
 2. 두 객체의 다중성을 결정합니다. 
 3. 연관 관계의 주인을 설장합니다. 
@@ -87,7 +87,7 @@ Team findTeam = findMember.getTeam();
 ### @ManyToOne
 다대일(N:1)을 뜻합니다.
 
-:psuhpin:속성
+:pushpin:속성
 * optional (true) : false로 설정시 연관된 엔티티가 항상 있어야 합니다. 
 * fetch (FetchType.EAGER) : 글로벌 패치 전략을 설정합니다. 
 * cascade : 영속성 전이기능을 사용합니다. 
@@ -96,13 +96,13 @@ Team findTeam = findMember.getTeam();
 ### @JoinColumn
 외래키를 매핑할 때 사용합니다. 
 
-:psuhpin:속성
+:pushpin:속성
 * name : 매핑할 왜리키 이름을 적습니다. 
 * referencedColumn : 외래 키가 참조하는 대상 테이블의 컬럼명을 적습니다. 
 * foreignKey (DDL) : 외래 키 제약조건을 직접 지정할 수 있습니다. 테이블을 사용할 떄만 생성합니다. 
 * unique, nullable, insertable, updatable, columnDefinition, table : @Column의 속성과 같습니다. 
 
-## 양방향 연관관계와 연관관계의 주
+## 양방향 연관관계와 연관관계의 주인
 *** 
 ![erd](./jpa4th2.png)
 위 이미지를 보면 회원에서 팀은 N에서 1의 방향으로 바라봅니다. 팀에서 회원은 1 에서 N을 향합니다.
@@ -141,7 +141,7 @@ int memberSize = findTeam.getMembers().size();
 ### @OneToMany
 일대다(1:N)을 뜻합니다.
 
-:psuhpin:속성
+:pushpin:속성
 
 * mappedBy : 연관관계의 주인 필드를 선택합니다. 
 * fetch (FetchType.Lazy) : 글로벌 패치 전략을 설정합니다.
